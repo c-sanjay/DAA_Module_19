@@ -10,12 +10,14 @@ To write a program to create a recursive function to reverse a string.
 4.  Get User Input: The program prompts the user to enter some text using the input() function and stores this input string in a variable named string.
 5.   Call the Function and Print
 ## Program:
-```PY
+```
 /*
 Program to implement Reverse a String
 Developed by: SANJAY C
 Register Number: 212223240150 
 */
+```
+```py
 def rev(str):
     return str[::-1]
     
