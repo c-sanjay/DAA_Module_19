@@ -14,13 +14,13 @@ To write a python program to implement quick sort using the first element as piv
 
 
 ## Program:
-```PY
-/*
+```
+
 Program to implement implement quick sort using the last element as pivot on the list of float values.
 Developed by: SANJAY C
 Register Number:  212223240150
-*/
-
+```
+```PY
 def quick(a,st,en):
     if en-st>1:
         p=partition(a,st,en)
