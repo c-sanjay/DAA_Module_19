@@ -20,62 +20,53 @@ Developed by: SANJAY C
 Register Number: 212223240150
 ```
 ```PY
-def merge(arr, l, m, r):
-    n1 = m - l + 1
-    n2 = r - m
-    L = [0] * (n1)
-    R = [0] * (n2)
-    for i in range(0, n1):
-        L[i] = arr[l + i]
- 
-    for j in range(0, n2):
-        R[j] = arr[m + 1 + j]
- 
+def merge_sort(inp_arr):
+    size=len(inp_arr)
+    if size>1:
+        middle=size//2
+        left_arr=inp_arr[:middle]
+        right_arr=inp_arr[middle:]
+        merge_sort(left_arr)
+        merge_sort(right_arr)
+        p=0
+        q=0
+        r=0
+        left_size=len(left_arr)
+        right_size=len(right_arr)
+        while p<left_size and q<right_size:
+            if left_arr[p]<right_arr[q]:
+                inp_arr[r]=left_arr[p]
+                p+=1
+            else:
+                inp_arr[r]=right_arr[q]
+                q+=1
+            r+=1
+        while p<left_size:
+            inp_arr[r]=left_arr[p]
+            p+=1
+            r+=1
+        while q<right_size:
+            inp_arr[r]=right_arr[q]
+            q+=1
+            r+=1
 
-    i = 0     
-    j = 0     
-    k = l     
- 
-    while i < n1 and j < n2:
-        if L[i] <= R[j]:
-            arr[k] = L[i]
-            i += 1
-        else:
-            arr[k] = R[j]
-            j += 1
-        k += 1
- 
 
-    while i < n1:
-        arr[k] = L[i]
-        i += 1
-        k += 1
- 
-    while j < n2:
-        arr[k] = R[j]
-        j += 1
-        k += 1
 
-def mergeSort(arr, l, r):
-    if l < r:
-        m = l+(r-l)//2
-        mergeSort(arr, m+1, r)
-        merge(arr, l, m, r)
- 
 
-arr =[]              
-n =int(input())
-for i in range(n):
-    arr.append(int(input()))
+n=int(input())
+inp_arr=[int(input()) for _ in range(n)]
 print("Given array is")
-for i in range(n):
-    print("%d" % arr[i],end=" ")
- 
-mergeSort(arr, 0, n-1)
-print("\n\nSorted array is")
-for i in range(n):
-    print("%d" % arr[i],end=" ")
- 
+print(*inp_arr)
+print(" ")
+size=len(inp_arr)
+size1=size//2
+second_half=inp_arr[:size1]
+first_half=inp_arr[size:1]
+merge_sort(first_half)
+inp_arr[:size1]=first_half
+inp_arr[size1:]=second_half
+print("Sorted array is")
+print(*inp_arr)
 ```
 
 ## Output:
