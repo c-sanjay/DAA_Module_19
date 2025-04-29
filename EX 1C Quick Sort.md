@@ -21,39 +21,38 @@ Developed by: SANJAY C
 Register Number:  212223240150
 ```
 ```PY
-def quick(a,st,en):
-    if en-st>1:
-        p=partition(a,st,en)
-        quick(a,st,p)
-        quick(a,p+1,en)
-def partition(a,st,en):
-    pivot=a[st]
-    i=st+1
-    j=en-1
-    print("Pivot: ",pivot)
+def quick_sort(alist, start , end):
+    if end - start >1:
+        p = partition(alist,start,end)
+        quick_sort(alist, start , p)
+        quick_sort(alist, p+1 , end)
+def partition(alist, start , end):
+    pivot = alist[start]
+    i = start + 1
+    j = end - 1
+    print("pivot: ",pivot)
     while True:
-        while(i<=j and a[i]<=pivot):
-            i=i+1
-        while(i<=j and a[j]>=pivot):
-            j=j-1
+        while i <= j and alist[i] <= pivot:
+            i = i+1
+        while i <= j and alist[j] >= pivot:
+            j = j-1
         if i<=j:
-            a[i],a[j]=a[j],a[i]
+            alist[i],alist[j] = alist[j],alist[i]
         else:
-            a[st],a[j]=a[j],a[st]
+            alist[start],alist[j] = alist[j],alist[start]
             return j
-
-a=[]
-n=int(input())
-for i in range(n):
-    a.append(int(input()))
-quick(a,0,len(a))
-print("Sorted array:",a)
-
+n = int(input())
+alist = [float(input()) for _ in range(n)]
+print("Input List")
+print(f" {alist}")
+quick_sort(alist, 0 , len(alist))
+print("Sorted List")
+print(f" {alist}")
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/04041b6c-24bd-42d2-9c85-d5526da27023)
+![image](https://github.com/user-attachments/assets/1c245aae-b53f-4826-aa2a-3ad275831ab7)
 
 
 ## Result:
