@@ -21,20 +21,18 @@ Register Number:  212223240150
 ```py
 def search(List, n):
     for i in List:
-        if i == n:
-            return 1
-            
+        if i==n:
+            return i
     return -1
-
-arr = int(input())
-List = []
-for _ in range(arr):
-    List.append(float(input()))
-n = float(input())
-if search(List, n)==1:
-    print(n,"Found")
+n=int(input())
+list1=[float(input()) for _ in range(n)]
+List=tuple(list1)
+target=float(input())
+sol=search(List,target)
+if sol==-1:
+    print(f"{target} Not Found")
 else:
-    print(n,"Not Found")
+    print(f"{sol} Found")
 
 ```
 
