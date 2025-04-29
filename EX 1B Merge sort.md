@@ -14,12 +14,12 @@ To write a python program to sort the first half of the list using merge sort.
 7. Return the sorted array once all subarrays are merged.
 
 ## Program:
-```PY
-/*
+```
 Program to implement Merge Sort
 Developed by: SANJAY C
 Register Number: 212223240150
-*/
+```
+```PY
 def merge(arr, l, m, r):
     n1 = m - l + 1
     n2 = r - m
