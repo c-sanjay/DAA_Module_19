@@ -13,13 +13,12 @@ To write a python program for a search function with parameter list name and the
 5. Print the result based on whether the number was found or not.
 
 ## Program:
-```PY
-/*
+```
 Program to implement a search function with parameter list name and the value to be searched using string values.
 Developed by: SANJAY C
 Register Number:  212223240150
-*/
-
+```
+```py
 def search(List, n):
     for i in List:
         if i == n:
